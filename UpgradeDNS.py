@@ -10,10 +10,10 @@ import json,urllib,re
 
 
 #替换以下参数
-ID="1223"
-Secret="hjh"
+ID="123"
+Secret="456"
 RegionId="cn-hangzhou"
-DomainName="xxx.com"
+DomainName="your.domain"
 #想要自动修改的主机名和域名类型
 HostNameList = ['www','@']
 Types = "A"
@@ -22,8 +22,8 @@ clt = client.AcsClient(ID,Secret,RegionId)
 
 #获取公网ip
 def GetLocalIP():
-    IPInfo = urllib.urlopen("http://ip.chinaz.com/getip.aspx").read()
-    IP = re.findall(r"ip:'(.*?)',", IPInfo)[0]
+    IPInfo = urllib.urlopen("http://members.3322.org/dyndns/getip").read()
+    IP = IPInfo.strip()
     return IP
 
 #获取域名列表（暂时无用）
